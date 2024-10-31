@@ -1,38 +1,39 @@
-import { Zap, ShieldCheck, MessageSquare, Users, Globe, Smartphone } from "lucide-react"
+import { Zap, MessageSquare, Users, Globe, Smartphone, ImageUp } from "lucide-react"
 
 const Features = () => {
    const features = [
       {
         icon: <MessageSquare className="h-6 w-5" strokeWidth={1.5} />,
-        title: "Real-time Messaging",
-        description: "This project is powered by Socket.IO which enables lightning-fast communication with real time messaging."
+        title: "Instant Chat",
+        description: "Experience real-time communication powered by Pusher, delivering seamless, lightning-fast messaging."
       },
       {
         icon: <Zap className="h-5 w-5" strokeWidth={1.5} />,
-        title: "Next.js 14 Performance",
-        description: "This project loads blazingly fast thanks to Next.js 14's cutting-edge performance optimizations."
+        title: "Optimized Performance with Next.js 14",
+        description: "Enjoy supercharged load speeds and smooth transitions, optimized with the latest advancements in Next.js."
       },
       {
-        icon: <ShieldCheck className="h-5 w-5" strokeWidth={1.5} />,
-        title: "Secure Communications",
-        description: "Conversations are protected with end-to-end encryption and secure websocket connections."
+        icon: <ImageUp className="h-5 w-5" strokeWidth={1.5} />,
+        title: "Effortless Image Sharing",
+        description: "Easily upload and share images up to 4MB with individuals or groups for richer conversations."
       },
       {
         icon: <Users className="h-5 w-5" strokeWidth={1.5} />,
-        title: "Group Chats",
-        description: "This project allows you to create and manage group conversations effortlessly."
+        title: "Organized Group Chats",
+        description: "Create and manage groups effortlessly, making collaboration and social interactions streamlined."
       },
       {
         icon: <Globe className="h-5 w-5" strokeWidth={1.5} />,
-        title: "Cross-platform Compatibility",
-        description: "This project is responsive a web application that works seamlessly across desktop and mobile browsers."
+        title: "Universal Compatibility",
+        description: "Optimized for any device, this web app ensures a consistent experience across desktops and mobile browsers."
       },
       {
         icon: <Smartphone className="h-5 w-5" strokeWidth={1.5} />,
-        title: "Mobile-friendly Design",
-        description: "Enjoy a native app-like experience on your mobile devices with intuitive, touch-friendly interface."
+        title: "Mobile-Optimized Experience",
+        description: "Navigate with ease on mobile devices through a touch-friendly, app-like interface designed for convenience."
       }
-   ]
+   ];
+    
     
    return (
       <section className="w-full mx-auto space-y-8 bg-zinc-50 py-8 md:py-12 lg:py-24">

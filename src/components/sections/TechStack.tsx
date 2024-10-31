@@ -1,6 +1,6 @@
 "use client"
 
-import { Cpu, Globe, Layers, Lock, Triangle, Zap } from "lucide-react"
+import { DatabaseZap, FileUp, Globe, Layers, Lock, MonitorSmartphone, Triangle, Zap } from "lucide-react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
@@ -11,41 +11,41 @@ const TechStack = () => {
    const technologies = [
       {
         name: "Next.js 14",
-        icon: <Globe className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-black",
-        description: "React framework for production-grade applications with server-side rendering and static site generation."
+        icon: <Globe className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-black", 
+        description: "A React framework offering server-side rendering, static generation, and cutting-edge performance optimizations."
       },
       {
-        name: "Socket.IO",
-        icon: <Zap className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-yellow-500",
-        description: "Enables real-time, bidirectional and event-based communication between web clients and servers."
+        name: "Pusher",
+        icon: <Zap className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-purple-500",
+        description: "Enables real-time, two-way communication for seamless interactions between clients and servers."
       },
       {
-        name: "TypeScript",
-        icon: <Cpu className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-blue-500",
-        description: "Typed superset of JavaScript that compiles to plain JavaScript, adding optional static typing."
-      },
-      {
-        name: "Tailwind CSS",
-        icon: <Layers className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-teal-500",
-        description: "Utility-first CSS framework for rapidly building custom user interfaces."
-      },
-      {
-        name: "Vercel",
-        icon: <Triangle  className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-zinc-950",
-        description: "Cloud platform for static sites and Serverless Functions, optimal for Next.js deployments."
+        name: "Uploadthing",
+        icon: <FileUp className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-red-500", 
+        description: "Effortlessly manage media uploads with secure, fast, and user-friendly file handling."
       },
       {
         name: "Auth.js",
-        icon: <Lock className="h-6 w-6" strokeWidth={1.5}/>,
-        color: "bg-red-500",
-        description: "Authentication for Next.js applications, supporting various providers and strategies."
+        icon: <Lock className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-green-500",
+        description: "A comprehensive authentication library supporting multiple providers for secure user access."
+      },
+      {
+        name: "Prisma",
+        icon: <DatabaseZap className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-blue-600",
+        description: "A powerful ORM for seamless database interactions, enabling schema-defined, type-safe queries."
+      },
+      {
+        name: "Vercel",
+        icon: <Triangle className="h-6 w-6" strokeWidth={1.5} />,
+        color: "bg-gray-900", 
+        description: "Cloud platform for fast, scalable deployment of static sites and serverless functions, ideal for Next.js."
       }
-   ]
+    ];
     
    return (
       <section className="space-y-8 py-8 md:py-12 lg:py-24 text-center">

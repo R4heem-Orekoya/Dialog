@@ -20,7 +20,7 @@ const Page = () => {
         </h2>
         <div className="space-y-2 px-6 md:px-8 xl:px-10">
           <p className="text-muted-foreground text-lg">
-            This project source code is available on <span className="underline underline-offset-2 text-primary"><Link href="https://github.com">Github</Link></span>.
+            This project source code is available on <span className="underline underline-offset-2 text-primary"><Link href="https://github.com/R4heem-Orekoya/Dialog">Github</Link></span>.
           </p>
           <p className="text-muted-foreground text-lg">Don&apos;t forget to give it a star ⭐.</p>
         </div>

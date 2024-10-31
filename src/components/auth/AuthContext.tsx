@@ -11,7 +11,7 @@ interface AuthContextProps {
 
 const AuthContext = ({ children, session}: AuthContextProps) => {
    return (
-      <SessionProvider refetchOnWindowFocus session={session}>
+      <SessionProvider session={session}>
          {children}
       </SessionProvider>
    )

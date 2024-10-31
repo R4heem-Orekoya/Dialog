@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
       const data = { user_id: session.user.email }
       
       const authResponse = pusherServer.authorizeChannel(socketId, channelName, data)
-      // console.log(authResponse);
       
       return NextResponse.json(authResponse)
    } catch (error) {

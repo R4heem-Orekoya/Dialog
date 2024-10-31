@@ -29,7 +29,7 @@ A real-time chat application built with Next.js 14, Pusher, Uploadthing, ShadCN 
 
 1. #### Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-chat-app.git
+   git clone `https://github.com/R4heem-Orekoya/Dialog.git`
    cd your-chat-app
    
 2. #### Install dependencies:
