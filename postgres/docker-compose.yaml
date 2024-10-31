@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment: 
+      POSTGRES_DB: chat_application_db
+      POSTGRES_USER: redoxx
+      POSTGRES_PASSWORD: supersecret
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgres/data
+      
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: pgadmin
+  #   restart: always
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: user@example.com
+  #     PGADMIN_DEFAULT_PASSWORD: supersecret
+  #   ports:
+  #     - "5050:5050"
+  #   volumes:
+  #     - ./pgadmin_data:/var/lib/pgadmin
+  #   depends_on:
+  #     - postgres
+      
