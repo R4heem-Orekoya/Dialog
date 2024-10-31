@@ -6,12 +6,12 @@ import { ReactNode } from "react"
 
 interface AuthContextProps {
    children: ReactNode
-   session: Session | null
+   session: Session
 }
 
 const AuthContext = ({ children, session}: AuthContextProps) => {
    return (
-      <SessionProvider session={session}>
+      <SessionProvider refetchOnWindowFocus session={session}>
          {children}
       </SessionProvider>
    )

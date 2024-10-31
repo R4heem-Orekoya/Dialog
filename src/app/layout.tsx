@@ -15,7 +15,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   
   return (
     <html lang="en" className="scroll-smooth">
-      <AuthContext session={session}>
+      <AuthContext session={session!}>
         <ActiveStatus />
         <body className="antialiased font-Mulish">
           <main>

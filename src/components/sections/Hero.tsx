@@ -19,7 +19,7 @@ const Hero = () => {
                   Get Started
                   <ArrowRight strokeWidth={1.5} className="w-4 h-4 ml-1"/>
                </ButtonLink>
-               <ButtonLink href="/" variant="secondary">
+               <ButtonLink href="https://github.com/R4heem-Orekoya/Dialog" variant="secondary">
                   GitHub
                   <Github strokeWidth={1.5} className="w-4 h-4 ml-1"/>
                </ButtonLink>
