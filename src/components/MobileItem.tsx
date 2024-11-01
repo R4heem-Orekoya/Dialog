@@ -3,6 +3,7 @@ import { ForwardRefExoticComponent, RefAttributes } from "react"
 import LogoutButton from "./auth/LogoutButton"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useRouter } from "next/navigation"
 
 interface MobileItemProps {
    href: string
@@ -12,8 +13,12 @@ interface MobileItemProps {
 }
 
 const MobileItem = ({ label, icon: Icon, href, active }: MobileItemProps) => {
+   const router = useRouter()
+   
    return (
-      <div className="flex-1 h-full border-t">
+      <div onClick={() => {
+         router.push(`${href}`)
+      }} className="flex-1 h-full border-t">
          {label === "Logout" ?
             <LogoutButton className="w-full h-20 flex flex-col items-center justify-center bg-transparent hover:bg-transparent text-muted-foreground hover:text-primary">
                <Icon className="flex-shrink-0 w-5 h-5" strokeWidth={1.5} />
