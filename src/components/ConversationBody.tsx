@@ -67,7 +67,7 @@ const ConversationBody = ({ initialMessages }: ConversationBodyProps) => {
 
    return (
       <ScrollArea className="flex-1">
-         <div className="max-h-full">
+         <div className="max-h-[100vh-140px]">
             {messages.map((message, i) => (
                <MessageBox
                   data={message}
