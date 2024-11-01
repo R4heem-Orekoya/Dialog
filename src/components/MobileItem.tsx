@@ -4,7 +4,6 @@ import { LucideProps } from "lucide-react"
 import { ForwardRefExoticComponent, RefAttributes } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { useRouter } from "next/navigation"
 import { logout } from "@/actions/logout"
 
 interface MobileItemProps {
@@ -15,8 +14,6 @@ interface MobileItemProps {
 }
 
 const MobileItem = ({ label, icon: Icon, href, active }: MobileItemProps) => {
-   const router = useRouter()
-   
    const handleClick = async () => {
       if(label === "Logout") {
          await logout()
