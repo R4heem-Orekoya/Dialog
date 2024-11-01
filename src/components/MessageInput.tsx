@@ -1,7 +1,6 @@
 import { TMessageSchema } from "@/lib/zod/validators";
 import { FieldErrors, UseFormHandleSubmit, UseFormRegister, UseFormSetValue } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
-import { KeyboardEvent } from "react";
 import axios from "axios";
 import useConversation from "@/hooks/useConversation";
 

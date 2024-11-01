@@ -50,7 +50,7 @@ export async function POST(request: Request) {
       })
 
       return NextResponse.json(updatedUser)
-   } catch (error: any) {
+   } catch (error) {
       console.log(error, "ERROR SETTINGS");
       return new NextResponse("Internal Server Error!", { status: 500 })
    }

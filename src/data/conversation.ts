@@ -1,7 +1,5 @@
 import { prisma } from "@/lib/db/prisma"
 import { currentUser } from "./user"
-import { Conversation } from "@/types"
-
 
 export const getConversations = async () => {
    const signedInUser = await currentUser()
@@ -55,7 +53,7 @@ export const getConversationById = async (id: string) => {
       })
       
       return conversation
-   } catch (error: any) {
+   } catch (error) {
       return null
    }
 }

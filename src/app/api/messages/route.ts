@@ -205,7 +205,7 @@ export async function POST(request: Request) {
       console.log("message and image sent");
       
       return NextResponse.json(newMessage)
-   } catch (error: any) {
+   } catch (error) {
       console.log(error, "Error messages");
       return new NextResponse("Internal Server Erro!", { status: 500 })
    }

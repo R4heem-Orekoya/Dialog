@@ -10,7 +10,6 @@ import MultiSelect from "./MultiSelect"
 import { groupSchema, TGroupSchema } from "@/lib/zod/validators"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { log } from "console"
 import axios from "axios"
 import { toast } from "sonner"
 
@@ -24,7 +23,7 @@ const GroupModal = ({ users }: GroupModalProps) => {
    const [isOpen, setIsOpen] = useState(false)
    const [isLoading, setIsLoading] = useState(false)
    
-   const { register, handleSubmit, setValue, getValues, formState: { errors } } = useForm<TGroupSchema>({
+   const { register, handleSubmit, setValue, formState: { errors } } = useForm<TGroupSchema>({
       resolver: zodResolver(groupSchema),
       defaultValues: {
          name: "",
@@ -52,7 +51,7 @@ const GroupModal = ({ users }: GroupModalProps) => {
    
    useEffect(() => {
       setValue("selectedUsers", selected)
-   }, [selected])
+   }, [selected, setValue])
    
    return (
       <Credenza open={isOpen} onOpenChange={setIsOpen}>

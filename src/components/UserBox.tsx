@@ -3,9 +3,8 @@
 import axios from "axios"
 import { User } from "@/types"
 import { useRouter } from "next/navigation"
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 import ProfilePicture from "./ProfilePicture"
-import LoadingModal from "./LoadingModal"
 import { toast } from "sonner"
 
 interface UserBoxProps {

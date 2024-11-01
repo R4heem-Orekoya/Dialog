@@ -12,6 +12,7 @@ import axios from "axios"
 import { toast } from "sonner"
 import useConversation from "@/hooks/useConversation"
 import { useRouter } from "next/navigation"
+
 interface MessageBoxProps {
    isLast: boolean
    data: Message
@@ -30,8 +31,6 @@ const MessageBox = ({ isLast, data }: MessageBoxProps) => {
    
    const container = cn("flex gap-3 p-4", { "justify-end": isOwn })
    
-   const avatar = cn({ "order-2": isOwn })
-   
    const body = cn("flex flex-col gap-1", { "items-end": isOwn })
    
    const message = cn("text-sm w-fit overflow-hidden text-primary bg-zinc-100 rounded-lg py-2 px-3", { "bg-primary text-white rounded-tr-none": isOwn, "rounded-tl-none": !isOwn, "bg-zinc-100 p-2": data.image })
@@ -44,7 +43,7 @@ const MessageBox = ({ isLast, data }: MessageBoxProps) => {
          router.refresh()
       })
       .catch(() => toast.error("Try again!"))
-   }, [data.id])
+   }, [data.id, conversationId, router])
    
    if(!session.data) return null
    

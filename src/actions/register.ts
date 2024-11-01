@@ -1,13 +1,13 @@
 "use server"
 
-import { signIn as signInFn } from "@/auth"
+// import { signIn as signInFn } from "@/auth"
 import { getUserByEmail } from "@/data/user"
-import { generateVerificationToken } from "@/lib/auth/tokens"
+// import { generateVerificationToken } from "@/lib/auth/tokens"
 import { prisma } from "@/lib/db/prisma"
 import { signUpValidator, TsignUpValidator } from "@/lib/zod/validators"
-import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
+// import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
 import bcrypt from "bcryptjs"
-import { redirect } from "next/navigation"
+// import { redirect } from "next/navigation"
 
 export const register = async (credentials: TsignUpValidator) => {
    try {
@@ -40,10 +40,11 @@ export const register = async (credentials: TsignUpValidator) => {
       // return { success: "Verification email sent!" }     
       
       return { success: "User created!" }
-   } catch (error: any) {
+   } catch (error) {
       // if(error instanceof PrismaClientInitializationError){
       //    return { error: "Couldn't reach database!"}
       // }
+      // @ts-expect-error type never issues
       return { error: error.message }
    }
 }

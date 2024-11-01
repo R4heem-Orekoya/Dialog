@@ -1,7 +1,6 @@
 import { currentUser } from "@/data/user";
 import { prisma } from "@/lib/db/prisma";
 import { pusherServer } from "@/lib/pusher";
-import { update } from "lodash";
 import { NextResponse } from "next/server";
 
 export async function POST (request: Request, { params }: { params: { conversationId?: string }}) {
@@ -60,8 +59,7 @@ export async function POST (request: Request, { params }: { params: { conversati
       await pusherServer.trigger(conversationId!, "message-update", updatedMessage)
       
       return NextResponse.json(updatedMessage)
-   } catch (error: any) {
-      console.log(error, "ERROR_MESSAGES_SEEN");
+   } catch (error) {
       return new NextResponse("Internal Server Error", { status: 500 })
    }
 }

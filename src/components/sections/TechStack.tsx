@@ -1,6 +1,6 @@
 "use client"
 
-import { DatabaseZap, FileUp, Globe, Layers, Lock, MonitorSmartphone, Triangle, Zap } from "lucide-react"
+import { DatabaseZap, FileUp, Globe, Lock, Triangle, Zap } from "lucide-react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"

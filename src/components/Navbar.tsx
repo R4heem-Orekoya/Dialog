@@ -1,7 +1,7 @@
 import Logo from "./Logo"
 import ButtonLink from "./ButtonLink"
 import { LogIn, LogOut, MessageSquareText, Users } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { currentUser } from "@/data/user";
 import Link from "next/link";
 import { logout } from "@/actions/logout";

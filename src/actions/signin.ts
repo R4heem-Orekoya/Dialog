@@ -2,7 +2,7 @@
 
 import { signIn as signInFn } from "@/auth"
 import { getUserByEmail } from "@/data/user"
-import { generateVerificationToken } from "@/lib/auth/tokens"
+// import { generateVerificationToken } from "@/lib/auth/tokens"
 import { signInValidator, TsignInValidator } from "@/lib/zod/validators"
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes"
 import { AuthError } from "next-auth"

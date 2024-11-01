@@ -17,14 +17,14 @@ interface MultiSelectProps {
    setValue: UseFormSetValue<TGroupSchema>
 }
 
-const MultiSelect = ({ users, selected, setSelected, setValue }: MultiSelectProps) => {
+const MultiSelect = ({ users, selected, setSelected }: MultiSelectProps) => {
    const inputRef = useRef<HTMLInputElement>(null);
    const [open, setOpen] = useState(false);
    const [inputValue, setInputValue] = useState("");
 
    const handleUnselect = useCallback((user: User) => {
       setSelected((prev) => prev?.filter((s) => s.id !== user.id));
-   }, []);
+   }, [setSelected]);
 
    const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
       const input = inputRef.current;
@@ -44,13 +44,11 @@ const MultiSelect = ({ users, selected, setSelected, setValue }: MultiSelectProp
             input.blur();
          }
       }
-   }, [])
+   }, [setSelected])
 
    const selectables = useMemo(() => {
       return users.filter((user) => !selected?.includes(user))
    }, [users, selected])
-
-   // console.log(selectables, selected, inputValue);
 
    return (
       <Command onKeyDown={handleKeyDown} className="overflow-visible">
@@ -103,7 +101,7 @@ const MultiSelect = ({ users, selected, setSelected, setValue }: MultiSelectProp
                                     e.preventDefault();
                                     e.stopPropagation();
                                  }}
-                                 onSelect={(value) => {
+                                 onSelect={() => {
                                     setInputValue("");
                                     setSelected((prev) => [...prev, user]);
                                  }}

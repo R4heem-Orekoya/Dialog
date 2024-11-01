@@ -61,7 +61,7 @@ export async function DELETE() {
       
       await signOut()
       return new NextResponse("Account deleted!")
-   } catch (error: any) {
+   } catch (error) {
       console.log(error, "DELETE_ENDPOINT");
       return new NextResponse("Internal Server Error!")
    }

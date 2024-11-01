@@ -21,7 +21,7 @@ export async function POST(request: Request, { params }: { params: { messageId?:
       
       if (!existingMessage) return new NextResponse("Invalid messageId!", { status: 400 })
          
-      const deletedMessage = await prisma.message.deleteMany({
+      await prisma.message.deleteMany({
          where: {
             id: messageId,
             senderId: signedInUser.id
@@ -36,7 +36,7 @@ export async function POST(request: Request, { params }: { params: { messageId?:
       await pusherServer.trigger(conversationId!, "message-delete", existingMessage)
       
       return NextResponse.json({ })
-   }catch(error: any) {
+   }catch(error) {
       console.log("Error delete message", error);
       return new NextResponse("Internal Server Error", { status: 500 })
    }

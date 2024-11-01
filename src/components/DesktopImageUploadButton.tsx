@@ -31,7 +31,7 @@ const DesktopImageUploadButton = () => {
          setFile(null)
          toast.success("Image sent successfully")
       },
-      onUploadError: (err) => {
+      onUploadError: () => {
          toast.error("Something went wrong! Try again later!")
       }
    });
@@ -39,7 +39,7 @@ const DesktopImageUploadButton = () => {
    const uploadFile = useCallback(() => {
       if(!file) return  
       startUpload([file])
-   }, [file])
+   }, [file, startUpload])
    
    return (
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

@@ -31,7 +31,7 @@ const MobileImageUploadButton = () => {
          setFile(null)
          toast.success("Image sent successfully")
       },
-      onUploadError: (err) => {
+      onUploadError: () => {
          toast.error("Something went wrong! Try again later!")
       }
    });
@@ -39,7 +39,7 @@ const MobileImageUploadButton = () => {
    const uploadFile = useCallback(() => {
       if(!file) return
       startUpload([file])
-   }, [file])
+   }, [file, startUpload])
    
    return (
       <Drawer open={isOpen} onOpenChange={setIsOpen}>

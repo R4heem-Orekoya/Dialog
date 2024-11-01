@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation"
 import useConversation from "./useConversation"
 import { useMemo } from "react"
-import { Handshake, LogOut, MessageSquareText, User, Users } from "lucide-react"
+import { LogOut, MessageSquareText, Users } from "lucide-react"
 
 const useRoutes = () => {
    const pathname = usePathname()
@@ -20,12 +20,6 @@ const useRoutes = () => {
          icon: Users ,
          active: pathname === "/users"
       },
-      // {
-      //    label: 'Friend Requests',
-      //    href: "/friend-requests",
-      //    icon: Handshake ,
-      //    active: pathname === "/friend-requests"
-      // },
       {
          label: 'Logout',
          href: "#",

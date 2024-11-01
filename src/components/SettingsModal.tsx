@@ -13,7 +13,8 @@ import axios from "axios"
 import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
-import DeleteAccountConfirmationAlert from "./DeleteAccountConfirmationAlert"
+import Image from "next/image"
+// import DeleteAccountConfirmationAlert from "./DeleteAccountConfirmationAlert"
 
 interface SettingsModalProps {
    currentUser: User
@@ -45,7 +46,7 @@ const SettingsModal = ({ currentUser }: SettingsModalProps) => {
             setFile(null)
          })
       },
-      onUploadError: (err) => {
+      onUploadError: () => {
          toast.error("Something went wrong! Try again later!")
       }
    })
@@ -71,7 +72,7 @@ const SettingsModal = ({ currentUser }: SettingsModalProps) => {
       if(!file) return
       setisLoading(true)
       startUpload([file])
-   }, [file])
+   }, [file, startUpload])
 
    const handeClick = useCallback(() => {
       fileInputRef.current?.click()
@@ -97,7 +98,14 @@ const SettingsModal = ({ currentUser }: SettingsModalProps) => {
                   <Label>Profile Picture</Label>
                   <div className="flex items-center">
                      {file ? (
-                        <img className="size-10 rounded-full object-contain bg-zinc-100" src={URL.createObjectURL(file as File)} alt={`${currentUser.name} profile image`} />
+                        <div className="relative size-10 rounded-full bg-zinc-100">
+                           <Image 
+                              fill 
+                              className="w-full h-full rounded-full object-contain" 
+                              src={URL.createObjectURL(file as File)} 
+                              alt={`${currentUser.name} profile image`} 
+                           />
+                        </div>
                      ) : (
                         <Avatar className="bg-zinc-100">
                            <AvatarImage src={currentUser?.image ||`https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=${currentUser.name}`} alt="@shadcn" />

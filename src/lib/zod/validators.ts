@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { User } from "../../types"
 
 export const signInValidator = z.object({
    email: z.string().email({message: "Enter a valid email."}),

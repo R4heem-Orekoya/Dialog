@@ -66,9 +66,9 @@ const ConversationBox = ({ data }: ConversationBox) => {
       }
       
       return "Started a conversation"
-   }, [lastMessage, data.messages]) 
+   }, [lastMessage, doesLastMessageBelongToUser]) 
    
-   const date = useCallback((date: Date) => renderDate(date), [lastMessage])
+   const date = useCallback((date: Date) => renderDate(date), [])
    
    return (
       <div onClick={handleClick} className={cn("relative w-full flex items-center space-x-3 p-3 bg-white hover:bg-zinc-100 rounded-md transition cursor-pointer", {"border bg-zinc-100": selected })}>
