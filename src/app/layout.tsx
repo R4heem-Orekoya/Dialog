@@ -7,7 +7,7 @@ import ActiveStatus from "@/components/ActiveStatus";
 
 export const metadata: Metadata = {
   title: "Dialog",
-  description: "This is chat application built by redoxx with next js 14 and socket.io.",
+  description: "This is chat application built by redoxx with next js 14 and Pusher.",
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
