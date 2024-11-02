@@ -11,7 +11,7 @@ const MobileTab = () => {
    if(isOpen) return null
    
    return (
-      <div className="flex justify-between items-center fixed bottom-0 w-full h-20 border-t bg-white md:hidden">
+      <div className="flex justify-between items-center fixed bottom-0 z-[9999] w-full h-20 border-t bg-white md:hidden">
          {routes.map((route) => (
             <MobileItem 
                key={route.label} 

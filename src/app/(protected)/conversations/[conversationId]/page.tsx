@@ -21,8 +21,8 @@ const Page = async ({ params: { conversationId } }: { params: { conversationId: 
    
    
    return (
-      <div className="md:pl-80 h-screen">
-         <div className="h-full flex flex-col">
+      <div className="md:pl-80 h-[100svh]">
+         <div className="h-full w-full flex flex-col">
             <ConversationHeader conversation={conversation} />
             <ConversationBody initialMessages={messages} />
             <MessageForm />

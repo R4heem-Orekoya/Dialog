@@ -28,7 +28,7 @@ const MessageForm = () => {
    }
    
    return (
-      <div className="h-16 border-t bg-white flex items-center gap-3 px-4 md:px-6">
+      <div className="w-full h-16 border-t bg-white flex items-center gap-3 px-4 md:px-6">
          <div className="hidden md:flex">
             <DesktopImageUploadButton />
          </div>

@@ -11,7 +11,7 @@ import { ScrollArea } from "./ui/scroll-area"
 
 interface ConversationBodyProps {
    initialMessages: Message[]
-}
+} 
 
 const ConversationBody = ({ initialMessages }: ConversationBodyProps) => {
    const [messages, setMessages] = useState(initialMessages)
@@ -67,7 +67,7 @@ const ConversationBody = ({ initialMessages }: ConversationBodyProps) => {
 
    return (
       <ScrollArea className="flex-1">
-         <div className="max-h-[100dvh-140px]">
+         <div className="">
             {messages.map((message, i) => (
                <MessageBox
                   data={message}

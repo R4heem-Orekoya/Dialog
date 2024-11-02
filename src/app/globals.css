@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body{
+  height: -webkit-fill-available;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
