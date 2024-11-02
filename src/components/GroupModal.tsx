@@ -61,7 +61,7 @@ const GroupModal = ({ users }: GroupModalProps) => {
             </Button>
          </CredenzaTrigger>
          
-         <CredenzaContent className="md:max-w-lg">
+         <CredenzaContent className="md:max-w-lg ">
             <CredenzaHeader>
                <CredenzaTitle>Create a group chat</CredenzaTitle>
                <CredenzaDescription>
