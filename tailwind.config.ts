@@ -57,7 +57,7 @@ export default withUt({
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		fontFamily: {
-			Mulish: ["Mulish", "serif"]
+			Mulish: ['var(--font-mulish)']
 		}
   	},
   },
