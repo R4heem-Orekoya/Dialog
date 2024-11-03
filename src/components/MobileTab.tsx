@@ -19,7 +19,6 @@ const MobileTab = () => {
                href={route.href}
                icon={route.icon}
                label={route.label}
-               onclick={route.onclick}
             />
          ))}
       </div>

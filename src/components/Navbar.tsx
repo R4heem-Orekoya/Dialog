@@ -1,14 +1,31 @@
+"use client"
+
 import Logo from "./Logo"
 import ButtonLink from "./ButtonLink"
 import { LogIn, LogOut, MessageSquareText, Users } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { currentUser } from "@/data/user";
 import Link from "next/link";
 import { logout } from "@/actions/logout";
 import ProfilePicture from "./ProfilePicture";
+import { toast } from "sonner";
+import { User } from "@/types";
+import { useCallback } from "react";
 
-const Navbar = async () => {
-	const session = await currentUser()
+interface NavbarProps {
+	session: User | null
+}
+
+const Navbar = ({ session }: NavbarProps) => {
+	const handleLogout = useCallback(() => {
+		const promise = logout("/")
+		toast.promise(promise, {
+			loading: 'Logging out...',
+			success: () => {
+				return "Logged out successfully!";
+			},
+			error: "Couldn't logout, try again!",
+		})
+	}, [])
 	
 	return (
 		<nav className="w-[min(1400px,100%)] px-6 md:px-8 lg:px-10 mx-auto h-20 flex justify-between items-center">
@@ -38,12 +55,13 @@ const Navbar = async () => {
 							</Link>
 						</DropdownMenuItem>
 						<DropdownMenuItem>
-							<form action={logout}>
-								<button type="submit" className="flex items-center gap-2">
-									<LogOut className="w-4 h-4 text-muted-foreground" strokeWidth={1.6}/>
-									logout
-								</button>
-							</form>
+							<button onClick={handleLogout}
+								type="submit" 
+								className="flex items-center gap-2"
+							>
+								<LogOut className="w-4 h-4 text-muted-foreground" strokeWidth={1.6}/>
+								logout
+							</button>
 						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>

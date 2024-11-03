@@ -2,7 +2,6 @@
 
 import { signOut } from "@/auth"
 
-export const logout = async () => {
-   "use server"
-   await signOut()
+export const logout = async (redirectTo: string) => {
+   await signOut({ redirectTo })
 }

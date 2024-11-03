@@ -1,6 +1,7 @@
 import { logout } from "@/actions/logout"
 import { ReactNode } from "react"
 import { Button } from "../ui/button"
+import { toast } from "sonner"
 
 interface LogoutButtonProps {
    children: ReactNode
@@ -10,11 +11,20 @@ interface LogoutButtonProps {
 
 const LogoutButton = ({ children, className, variant }: LogoutButtonProps) => {
    return (
-      <form action={logout}>
-         <Button type="submit" className={className} size="icon" variant={variant}>
-            {children}
-         </Button> 
-      </form>
+      <Button 
+         onClick={() => {
+            const promise = logout("/sign-in")
+            toast.promise(promise, {
+               loading: 'Logging out...',
+               success: () => {
+                  return "Logged out successfully!";
+               },
+               error: "Couldn't logout, try again!",
+            })
+         }} 
+      type="submit" className={className} size="icon" variant={variant}>
+         {children}
+      </Button> 
    )
 }
 

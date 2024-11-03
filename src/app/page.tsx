@@ -4,12 +4,15 @@ import Hero from "@/components/sections/Hero"
 import TechStack from "@/components/sections/TechStack"
 import Footer from "@/components/sections/Footer"
 import Link from "next/link"
+import { currentUser } from "@/data/user"
 
-const Page = () => {
+const Page = async () => {
+  const session = await currentUser()
+  
   return (
     <div className="relative">
       <div className="absolute left-1/2 -translate-x-1/2 w-[90%] aspect-video -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-      <Navbar />
+      <Navbar session={session}/>
       <Hero />
       <Features />
       <TechStack />
